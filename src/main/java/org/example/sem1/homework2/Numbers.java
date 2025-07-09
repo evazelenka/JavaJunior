@@ -11,18 +11,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Numbers {
 
 
-    public static void average(List<Integer> numbers){
+    public static void averageOfEvenNumbers(List<Integer> numbers){
         AtomicInteger sum = new AtomicInteger(0);
         AtomicInteger cntr = new AtomicInteger(0);
         numbers.stream().filter(n -> n%2 == 0).forEach(n -> {
             sum.set(sum.intValue() + n);
             cntr.incrementAndGet();
         });
-        System.out.println("Average value " + sum.intValue()/cntr.intValue());
+        System.out.println("Average value: " + sum.intValue()/cntr.intValue());
     }
 
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(7, 9, 8, 53, 1, 102, 15, 52, 8, 17);
-        average(numbers);
+        averageOfEvenNumbers(numbers);
     }
 }
