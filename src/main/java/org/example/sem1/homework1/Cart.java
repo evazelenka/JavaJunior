@@ -1,10 +1,9 @@
-package org.example.sem1;
+package org.example.sem1.homework1;
 
-import org.example.sem1.common.interfaces.*;
+import org.example.sem1.homework1.common.interfaces.Food;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
 
 /**
  * Корзина

@@ -1,25 +1,25 @@
-package org.example.sem1.common;
+package org.example.sem1.homework1.common;
 
-import org.example.sem1.common.interfaces.HealthyFood;
+import org.example.sem1.homework1.common.interfaces.Snack;
 
 /**
- * Фрукт
+ * Чипсы
  */
-public class Fruit implements HealthyFood {
+public class Crisps implements Snack {
     @Override
     public boolean getProteins() {
         return false;
     }
     @Override
     public boolean getFats() {
-        return false;
-    }
-    @Override
-    public boolean getCarbohydrates() {
         return true;
     }
     @Override
+    public boolean getCarbohydrates() {
+        return false;
+    }
+    @Override
     public String getName() {
-        return "Фрукт";
+        return "Чипсы";
     }
 }

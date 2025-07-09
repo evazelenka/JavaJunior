@@ -1,4 +1,4 @@
-package org.example.sem1.common.interfaces;
+package org.example.sem1.homework1.common.interfaces;
 
 /**
  *  Здоровая еда

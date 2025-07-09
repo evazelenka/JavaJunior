@@ -1,14 +1,14 @@
-package org.example.sem1.common;
+package org.example.sem1.homework1.common;
 
-import org.example.sem1.common.interfaces.SemiFinishedFood;
+import org.example.sem1.homework1.common.interfaces.HealthyFood;
 
 /**
- * Пельмени
+ * Фрукт
  */
-public class DumplingsMeat implements SemiFinishedFood {
+public class Fruit implements HealthyFood {
     @Override
     public boolean getProteins() {
-        return true;
+        return false;
     }
     @Override
     public boolean getFats() {
@@ -16,10 +16,10 @@ public class DumplingsMeat implements SemiFinishedFood {
     }
     @Override
     public boolean getCarbohydrates() {
-        return false;
+        return true;
     }
     @Override
     public String getName() {
-        return "Пельмени";
+        return "Фрукт";
     }
 }

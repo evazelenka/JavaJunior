@@ -1,11 +1,11 @@
-package org.example.sem1.common;
+package org.example.sem1.homework1.common;
 
-import org.example.sem1.common.interfaces.Snack;
+import org.example.sem1.homework1.common.interfaces.SemiFinishedFood;
 
 /**
- * Чипсы
+ * Чебурек
  */
-public class Crisps implements Snack {
+public class Cheburek implements SemiFinishedFood {
     @Override
     public boolean getProteins() {
         return false;
@@ -20,6 +20,6 @@ public class Crisps implements Snack {
     }
     @Override
     public String getName() {
-        return "Чипсы";
+        return "Чебурек";
     }
 }

@@ -1,8 +1,9 @@
-package org.example.sem1;
+package org.example.sem1.homework1;
 
-import org.example.sem1.common.*;
-import org.example.sem1.common.interfaces.Food;
-import org.example.sem1.common.interfaces.Thing;
+
+import org.example.sem1.homework1.common.*;
+import org.example.sem1.homework1.common.interfaces.Food;
+import org.example.sem1.homework1.common.interfaces.Thing;
 
 import java.util.ArrayList;
 import java.util.Collection;

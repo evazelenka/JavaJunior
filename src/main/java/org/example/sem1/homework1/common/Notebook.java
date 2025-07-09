@@ -1,6 +1,6 @@
-package org.example.sem1.common;
+package org.example.sem1.homework1.common;
 
-import org.example.sem1.common.interfaces.Thing;
+import org.example.sem1.homework1.common.interfaces.Thing;
 
 /**
  *  Блокнот

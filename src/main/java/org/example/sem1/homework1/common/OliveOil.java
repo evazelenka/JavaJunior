@@ -1,6 +1,6 @@
-package org.example.sem1.common;
+package org.example.sem1.homework1.common;
 
-import org.example.sem1.common.interfaces.HealthyFood;
+import org.example.sem1.homework1.common.interfaces.HealthyFood;
 
 /**
  * Оливковое масло

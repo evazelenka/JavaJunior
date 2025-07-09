@@ -1,4 +1,4 @@
-package org.example.sem1;
+package org.example.sem1.homework1;
 
 /*
   Зачада: Техническое задание на разработку информационной системы UMarket
@@ -40,7 +40,7 @@ package org.example.sem1;
 
  */
 
-import org.example.sem1.common.interfaces.*;
+import org.example.sem1.homework1.common.interfaces.*;
 
 import java.util.Scanner;
 
