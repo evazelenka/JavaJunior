@@ -6,6 +6,7 @@ import java.util.UUID;
 @Table(name = "users")
 public class Employee {
 
+    // region Поля
     @Column(name = "id", primaryKey = true)
     private UUID id;
 
@@ -14,6 +15,7 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
+    // endregion
 
     // region Getters/Setters
     public UUID getId() {

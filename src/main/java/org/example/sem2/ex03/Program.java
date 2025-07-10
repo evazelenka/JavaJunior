@@ -24,7 +24,7 @@ public class Program {
      * таких как вставка, выборка, обновление и удаление.
      * </p>
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
         Employee user = new Employee("Stanislav", "stas@mail.ru");
         UUID pk = UUID.randomUUID();
         user.setId(pk);
@@ -32,5 +32,8 @@ public class Program {
         QueryBuilder queryBuilder = new QueryBuilder();
         String insertQuery = queryBuilder.buildInsertQuery(user);
         System.out.printf("Insert Query: %s\n", insertQuery);
+
+        String selectQuery = queryBuilder.buildSelectQuery(user.getClass(), user.getId());
+        System.out.printf("Select Query: %s\n", selectQuery);
     }
 }
