@@ -114,9 +114,26 @@ public class QueryBuilder {
      *
      * @param clazz
      * @param primaryKey
-     * @return
+     * @return String
      */
     public String buildDeleteQuery(Class<?> clazz, UUID primaryKey){
+        StringBuilder query = new StringBuilder("DELETE FROM ");
+
+        if (clazz.isAnnotationPresent(Table.class)){
+            Table table = clazz.getAnnotation(Table.class);
+            query.append(table.name()).append(" WHERE ");
+        }
+
+        Field[] fields = clazz.getDeclaredFields();
+        for (Field field : fields){
+            if (field.isAnnotationPresent(Column.class)){
+                Column column = field.getAnnotation(Column.class);
+                if(column.primaryKey()){
+                    query.append(field.getName()).append(" = ").append(primaryKey).append(";");
+                    return query.toString();
+                }
+            }
+        }
         return null;
     }
 }

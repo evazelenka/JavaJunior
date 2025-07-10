@@ -9,7 +9,6 @@ public class Program {
      * <p>
      * Фреймворк должен позволять аннотировать классы и поля для связывания их
      * с таблицами и столбцами в базе данных.
-     *
      * 1. Аннотации для маппинга:
      * Создайте аннотации, такие как @Entity, @Table, @Column для маппинга классов,
      * таблиц и полей в базе данных.
@@ -38,6 +37,9 @@ public class Program {
 
         String updateQuery = queryBuilder.buildUpdateQuery(user);
         System.out.printf("Update Query: %s\n", updateQuery);
+
+        String deleteQuery = queryBuilder.buildDeleteQuery(Employee.class, pk);
+        System.out.printf("Delete Query: %s\n", deleteQuery);
 
     }
 }
