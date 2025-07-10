@@ -63,4 +63,60 @@ public class QueryBuilder {
         }
        return null;
     }
+
+    public String buildUpdateQuery(Object obj) throws IllegalAccessException {
+        Class<?> clazz = obj.getClass();
+        StringBuilder query = new StringBuilder("UPDATE ");
+
+        if (clazz.isAnnotationPresent(Table.class)){
+            Table table = clazz.getAnnotation(Table.class);
+            query
+                    .append(table.name())
+                    .append(" SET ");
+            Field[] fields = clazz.getDeclaredFields();
+            for (Field field : fields){
+                if (field.isAnnotationPresent(Column.class)){
+                    field.setAccessible(true);
+                    Column column = field.getAnnotation(Column.class);
+                    if(!column.primaryKey()){
+                        field.setAccessible(true);
+                        query.append(column.name()).append(" = '")
+                                .append(field.get(obj)).append("', ");
+                    }
+
+                }
+            }
+            if (query.charAt(query.length() -2) == ','){
+                query.delete(query.length() - 2, query.length());
+            }
+
+            query.append(" WHERE ");
+
+            for (Field field : fields){
+                if (field.isAnnotationPresent(Column.class)){
+                    Column column = field.getAnnotation(Column.class);
+                    if(column.primaryKey()){
+                        field.setAccessible(true);
+                        query.append(field.getName()).append(" = ").append(field.get(obj)).append(";");
+                        break;
+                    }
+                }
+            }
+            query.append(");");
+            return query.toString();
+        }else
+            return null;
+    }
+
+
+    /**
+     * TODO: Доработать в рамках домашней работы!
+     *
+     * @param clazz
+     * @param primaryKey
+     * @return
+     */
+    public String buildDeleteQuery(Class<?> clazz, UUID primaryKey){
+        return null;
+    }
 }
