@@ -5,7 +5,7 @@ import java.io.*;
 public class Student implements Externalizable {
     private String name;
     private int age;
-    private transient Double GPA;
+    private Double GPA;
 
     public Student(){}
 
@@ -23,22 +23,14 @@ public class Student implements Externalizable {
         return age;
     }
 
-    public double getGPA() {
-        return GPA;
-    }
-
-    public void setGPA(Double GPA) {
-        this.GPA = GPA;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", GPA=" + GPA +
                 '}';
     }
-
 
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {

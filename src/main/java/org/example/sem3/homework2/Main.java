@@ -14,14 +14,16 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         Double g = 5.0;
-        Student student = new Student("Dima", 26, g);
+        Student student = new Student("Dimak", 26, g);
         System.out.println(student);
         System.out.println();
 
         saveStudentToFile("student.json", student);
         saveStudentToFile("student.xml", student);
-        System.out.println("get student from student.json: " + getStudentFromFile("student.json"));
-        System.out.println("get student from student.xml: " + getStudentFromFile("student.xml"));
+        student = getStudentFromFile("student.json");
+        System.out.println("get student from student.json: " + student);
+        student = getStudentFromFile("student.xml");
+        System.out.println("get student from student.xml: " + student);
     }
 
     public static void saveStudentToFile(String fileName, Student student) throws IOException {
