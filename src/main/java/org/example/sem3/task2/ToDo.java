@@ -17,13 +17,16 @@ public class ToDo implements Externalizable {
      * Статус задачи
      */
     private boolean isDone;
+
+    private transient String name;
     //endregion
 
     //region Конструкторы
     public ToDo() { }
 
-    public ToDo(String title) {
+    public ToDo(String title, String name) {
         this.title = title;
+        this.name = name;
         isDone = false;
     }
     //endregion
@@ -61,6 +64,14 @@ public class ToDo implements Externalizable {
 
     public void setDone(boolean flag) {
         isDone = flag;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     //endregion
